@@ -34,4 +34,13 @@ public class Categoria {
     public UUID getId() {
         return id;
     }
+
+    @Override
+    public String toString() {
+        return "Categoria{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                '}';
+    }
 }

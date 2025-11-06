@@ -74,4 +74,17 @@ public class Producto {
     public UUID getId() {
         return id;
     }
+
+    @Override
+    public String toString() {
+        return "Producto{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", precio=" + precio +
+                ", stock=" + stock +
+                ", fechaLanzamiento='" + fechaLanzamiento + '\'' +
+                ", categoria=" + categoria +
+                '}';
+    }
 }
