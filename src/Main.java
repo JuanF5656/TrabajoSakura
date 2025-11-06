@@ -1,6 +1,4 @@
-import GlowUp.Carrito;
-import GlowUp.Categoria;
-import GlowUp.Producto;
+import GlowUp.*;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -11,8 +9,7 @@ public class Main {
         System.out.println("1. Operaciones Comerciales");
         System.out.println("2. Administración y control");
         System.out.println("3. Modulos Confidenciales");
-        System.out.println("4. Historial");
-        System.out.println("5. Salir");
+        System.out.println("4. Salir");
     }
     static void OperacionesComerciales(){
         System.out.println("--Op. Comerciales--");
@@ -37,10 +34,15 @@ public class Main {
         System.out.println("9. Bloquear/Desbloquear ususario");
         System.out.println("0. Volver");
     }
+    static void ModulosConfidenciales(){
+
+    }
 
     public static void main(String[] args) {
         ArrayList<Producto> productos = new ArrayList<>();
         ArrayList<Categoria> categorias = new ArrayList<>();
+        ArrayList<Usuario> usuarios = new ArrayList<>();
+
         Carrito carrito = new Carrito();
         Scanner sc = new Scanner(System.in);
         int opcion = 0;
@@ -152,8 +154,27 @@ public class Main {
                             break;
                             case 8:
                                 //mostrar usuarios y su rol
+                            break;
+                            case 9:
+                                //bloquear o desbloquear ususario (permiso de admin usuario requerido)
+                            break;
+                            case 0:
+                                System.out.println("volviendo al menu principal...");
+                            break;
+                            default:
+                                System.out.println("opcion invalida");
+                            break;
                         }
                     }
+                case 3 :
+                    boolean accesoConfidencial = rolUsuario.equals("Sakura") || rolUsuario.equals("Consejo");
+                    ModuloConfidencial modConf = new ModuloConfidencial(accesoConfidencial);
+                    modConf.menuConfidencial();
+                break;
+                case 4:
+                    salir = true;
+                    break;
+
             }
         }
 
